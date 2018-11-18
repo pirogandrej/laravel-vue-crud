@@ -14002,13 +14002,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue_router__ = __webpack_require__(41);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_AllContacts_vue__ = __webpack_require__(42);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_AllContacts_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__components_AllContacts_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_ExampleComponent_vue__ = __webpack_require__(48);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_ExampleComponent_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__components_ExampleComponent_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_SingleContact_vue__ = __webpack_require__(51);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_SingleContact_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3__components_SingleContact_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__components_EditContact_vue__ = __webpack_require__(54);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__components_EditContact_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4__components_EditContact_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__store_js__ = __webpack_require__(57);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_SingleContact_vue__ = __webpack_require__(51);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_SingleContact_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__components_SingleContact_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_EditContact_vue__ = __webpack_require__(54);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_EditContact_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3__components_EditContact_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__store_js__ = __webpack_require__(57);
 __webpack_require__(14);
 window.Vue = __webpack_require__(37);
 window.Vuex = __webpack_require__(40);
@@ -14018,16 +14016,12 @@ window.Vuex = __webpack_require__(40);
 
 
 
-
 Vue.use(Vuex);
 Vue.use(__WEBPACK_IMPORTED_MODULE_0_vue_router__["a" /* default */]);
 
-var store = new Vuex.Store(__WEBPACK_IMPORTED_MODULE_5__store_js__["a" /* default */]);
+var store = new Vuex.Store(__WEBPACK_IMPORTED_MODULE_4__store_js__["a" /* default */]);
 
-// Vue.component(example-component, require('./components/ExampleComponent.vue'));
-// Vue.component('add-contact', require('./components/AddContact.vue'));
-
-var routes = [{ path: '/', component: __WEBPACK_IMPORTED_MODULE_1__components_AllContacts_vue___default.a }, { path: '/contact/:id', component: __WEBPACK_IMPORTED_MODULE_3__components_SingleContact_vue___default.a, name: 'single-contact' }, { path: '/editcontact/:id', component: __WEBPACK_IMPORTED_MODULE_4__components_EditContact_vue___default.a, name: 'edit-contact' }, { path: '/example', component: __WEBPACK_IMPORTED_MODULE_2__components_ExampleComponent_vue___default.a }];
+var routes = [{ path: '/', component: __WEBPACK_IMPORTED_MODULE_1__components_AllContacts_vue___default.a }, { path: '/contact/:id', component: __WEBPACK_IMPORTED_MODULE_2__components_SingleContact_vue___default.a, name: 'single-contact' }, { path: '/editcontact/:id', component: __WEBPACK_IMPORTED_MODULE_3__components_EditContact_vue___default.a, name: 'edit-contact' }];
 
 var router = new __WEBPACK_IMPORTED_MODULE_0_vue_router__["a" /* default */]({
     routes: routes
@@ -51105,16 +51099,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-    created: function created() {
-        this.formData.name = '';
-        this.formData.address = '';
-        this.formData.email = '';
-        this.formData.phone = '';
-    },
     data: function data() {
         return {
             formData: {
@@ -51511,125 +51497,9 @@ if (false) {
 }
 
 /***/ }),
-/* 48 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var disposed = false
-var normalizeComponent = __webpack_require__(2)
-/* script */
-var __vue_script__ = __webpack_require__(49)
-/* template */
-var __vue_template__ = __webpack_require__(50)
-/* template functional */
-var __vue_template_functional__ = false
-/* styles */
-var __vue_styles__ = null
-/* scopeId */
-var __vue_scopeId__ = null
-/* moduleIdentifier (server only) */
-var __vue_module_identifier__ = null
-var Component = normalizeComponent(
-  __vue_script__,
-  __vue_template__,
-  __vue_template_functional__,
-  __vue_styles__,
-  __vue_scopeId__,
-  __vue_module_identifier__
-)
-Component.options.__file = "resources/js/components/ExampleComponent.vue"
-
-/* hot reload */
-if (false) {(function () {
-  var hotAPI = require("vue-hot-reload-api")
-  hotAPI.install(require("vue"), false)
-  if (!hotAPI.compatible) return
-  module.hot.accept()
-  if (!module.hot.data) {
-    hotAPI.createRecord("data-v-299e239e", Component.options)
-  } else {
-    hotAPI.reload("data-v-299e239e", Component.options)
-  }
-  module.hot.dispose(function (data) {
-    disposed = true
-  })
-})()}
-
-module.exports = Component.exports
-
-
-/***/ }),
-/* 49 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
-/* harmony default export */ __webpack_exports__["default"] = ({
-    mounted: function mounted() {
-        console.log('Component mounted.');
-    }
-});
-
-/***/ }),
-/* 50 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _vm._m(0)
-}
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "container" }, [
-      _c("div", { staticClass: "row justify-content-center" }, [
-        _c("div", { staticClass: "col-md-8" }, [
-          _c("div", { staticClass: "card card-default" }, [
-            _c("div", { staticClass: "card-header" }, [
-              _vm._v("Example Component")
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "card-body" }, [
-              _vm._v(
-                "\n                    I'm an example component.\n                "
-              )
-            ])
-          ])
-        ])
-      ])
-    ])
-  }
-]
-render._withStripped = true
-module.exports = { render: render, staticRenderFns: staticRenderFns }
-if (false) {
-  module.hot.accept()
-  if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-299e239e", module.exports)
-  }
-}
-
-/***/ }),
+/* 48 */,
+/* 49 */,
+/* 50 */,
 /* 51 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -52034,10 +51904,8 @@ if (false) {
         },
         singlecontact: function singlecontact(state, payload) {
             state.contact = payload;
-            console.log('state.contact ' + state.contact);
         },
         deletecontact: function deletecontact(state, payload) {
-            console.log('payload = ' + payload);
             state.allcontacts.splice(payload, 1);
         }
     },

@@ -1,11 +1,9 @@
 <template>
     <div>
-        <!-- Button trigger modal -->
         <button type="button" class="btn btn-primary mb-3" data-toggle="modal" data-target="#exampleModal" style="float: left">
             Новый пользователь
         </button>
 
-        <!-- Modal -->
         <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
@@ -46,12 +44,6 @@
 
 <script>
     export default {
-        created(){
-            this.formData.name = '';
-            this.formData.address = '';
-            this.formData.email = '';
-            this.formData.phone = '';
-        },
         data(){
             return {
                 formData: {

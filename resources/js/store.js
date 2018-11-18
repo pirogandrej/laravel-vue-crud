@@ -20,10 +20,8 @@ export default {
         },
         singlecontact (state, payload){
             state.contact = payload
-            console.log('state.contact '+state.contact);
         },
         deletecontact (state, payload){
-            console.log('payload = ' + payload);
             state.allcontacts.splice(payload, 1);
         }
     },
