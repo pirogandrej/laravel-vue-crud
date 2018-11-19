@@ -52,7 +52,7 @@
         },
         methods:{
             addcontact(){
-                axios.post('addcontact', {
+                axios.post('contacts', {
                     name: this.formData.name,
                     address: this.formData.address,
                     email: this.formData.email,

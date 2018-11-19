@@ -37,7 +37,7 @@
             AddContact
         },
         created(){
-            axios.get('allcontacts')
+            axios.get('contacts')
                 .then(response => {
                     this.$store.commit('allcontacts', response.data);
             })
@@ -50,10 +50,8 @@
         methods: {
             deletecontact(id, index){
                 if(confirm('Удалить запись ?')){
-                    axios.delete('deletecontact/' + id)
+                    axios.delete('contacts/' + id)
                     .then(response => {
-                        console.log(response);
-                        console.log(index);
                         this.$store.commit('deletecontact', index);
                     })
                 }

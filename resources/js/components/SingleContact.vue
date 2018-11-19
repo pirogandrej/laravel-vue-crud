@@ -1,6 +1,9 @@
 <template>
     <div>
-        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+
+        <all-contacts></all-contacts>
+
+        <div class="modal fade" id="singleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -26,12 +29,16 @@
 </template>
 
 <script>
+    import AllContacts from './AllContacts.vue';
     export default {
+        components: {
+            AllContacts
+        },
         created(){
-            axios.get('contact/' + this.$route.params.id)
+            axios.get('contacts/' + this.$route.params.id)
             .then(response=>{
                 this.$store.commit('singlecontact', response.data);
-                $('#exampleModal').modal('show');
+                $('#singleModal').modal('show');
              })
         },
         computed: {

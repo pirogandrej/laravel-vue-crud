@@ -1,7 +1,10 @@
 <template>
 
     <div>
-        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+
+        <all-contacts></all-contacts>
+
+        <div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -38,15 +41,19 @@
 </template>
 
 <script>
+    import AllContacts from './AllContacts.vue';
     export default {
+        components: {
+            AllContacts
+        },
         created(){
-            axios.get('contact/' + this.$route.params.id)
+            axios.get('contacts/' + this.$route.params.id)
                 .then(response=>{
                     this.formData.name = response.data.name,
                     this.formData.address = response.data.address,
                     this.formData.email = response.data.email,
                     this.formData.phone = response.data.phone,
-            $('#exampleModal').modal('show')
+            $('#editModal').modal('show')
                 })
         },
         data(){
@@ -61,8 +68,8 @@
         },
         methods:{
             updatecontact(){
-                $('#exampleModal').modal('hide');
-                axios.patch('updatecontact/' + this.$route.params.id, {
+                $('#editModal').modal('hide');
+                axios.patch('contacts/' + this.$route.params.id, {
                     name: this.formData.name,
                     address: this.formData.address,
                     email: this.formData.email,
@@ -74,7 +81,7 @@
                 })
             },
             closemodal(){
-                $('#exampleModal').modal('hide');
+                $('#editModal').modal('hide');
                 this.$router.push('/');
             }
         }
