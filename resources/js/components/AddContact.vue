@@ -28,13 +28,9 @@
                                 <input type="text" class="form-control" id="phone" name="phone"  placeholder="Phone" v-model="formData.phone">
                             </div>
                             <div class="form-group">
-                                <input type="submit" class="btn btn-primary" placeholder="Add">
+                                <button type="submit" class="btn btn-primary">Добавить</button>
                             </div>
                         </form>
-                    </div>
-                    <div class="modal-footer">
-                        <!--<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>-->
-                        <!--<button type="button" class="btn btn-primary">Save changes</button>-->
                     </div>
                 </div>
             </div>

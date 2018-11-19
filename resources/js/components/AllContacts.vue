@@ -12,8 +12,7 @@
                         <th>Phone</th>
                         <th>Actions</th>
                     </tr>
-                    <!--<tr v-for="contact in allcontacts" :key="contact.id">-->
-                    <tr v-for="contact, index in allcontacts">
+                    <tr v-for="(contact, index) in allcontacts">
                         <td>{{ contact.id }}</td>
                         <td>{{ contact.name }}</td>
                         <td>{{ contact.address }}</td>

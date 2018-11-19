@@ -7,6 +7,12 @@ use App\Contact;
 
 class ContactController extends Controller
 {
+    public function home(){
+
+        return view('appVue');
+
+    }
+
     public function all(){
         $contacts = Contact::all();
         return response()->json($contacts);

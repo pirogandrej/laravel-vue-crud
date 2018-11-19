@@ -1,12 +1,10 @@
 <?php
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/', 'ContactController@home')->name('app');
 
 Route::get('allcontacts', 'ContactController@all')->name('all');
 Route::post('addcontact', 'ContactController@store')->name('store');

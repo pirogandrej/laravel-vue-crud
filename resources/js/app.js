@@ -1,25 +1,40 @@
 require('./bootstrap');
-window.Vue = require('vue');
-window.Vuex = require('vuex');
-import VueRouter from 'vue-router';
-import AllContacts from './components/AllContacts.vue';
-import SingleContact from './components/SingleContact.vue';
-import EditContact from './components/EditContact.vue';
-import StoreData from './store.js';
 
-Vue.use(Vuex);
+window.Vue = require('vue');
+window.VueRouter = require('vue-router').default;
+window.Vuex = require('vuex');
+
 Vue.use(VueRouter);
+Vue.use(Vuex);
+
+const AllContacts = require('./components/AllContacts.vue');
+const SingleContact = require('./components/SingleContact.vue');
+const EditContact = require('./components/EditContact.vue');
+
+import StoreData from './store.js';
 
 const store = new Vuex.Store(StoreData);
 
 const routes = [
-    { path: '/', component: AllContacts },
-    { path: '/contact/:id', component: SingleContact, name: 'single-contact' },
-    { path: '/editcontact/:id', component: EditContact, name: 'edit-contact' }
+    {
+        name: 'all-contact',
+        path: '/',
+        component: AllContacts
+    },
+    {
+        name: 'single-contact',
+        path: '/contact/:id',
+        component: SingleContact
+    },
+    {
+        name: 'edit-contact',
+        path: '/editcontact/:id',
+        component: EditContact
+    }
 ];
 
 const router = new VueRouter({
-    routes
+    routes: routes
 });
 
 const app = new Vue({

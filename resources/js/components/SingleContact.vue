@@ -22,10 +22,6 @@
             </div>
         </div>
 
-        <!--<p>Name: {{singlecontact.name}} </p>-->
-        <!--<p>Address: {{singlecontact.address}} </p>-->
-        <!--<p>Email: {{singlecontact.email}} </p>-->
-        <!--<p>Phone: {{singlecontact.phone}} </p>-->
     </div>
 </template>
 
