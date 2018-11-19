@@ -13990,7 +13990,7 @@ module.exports = Cancel;
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(13);
-module.exports = __webpack_require__(58);
+module.exports = __webpack_require__(55);
 
 
 /***/ }),
@@ -14002,11 +14002,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue_router__ = __webpack_require__(41);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_AllContacts_vue__ = __webpack_require__(42);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_AllContacts_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__components_AllContacts_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_SingleContact_vue__ = __webpack_require__(51);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_SingleContact_vue__ = __webpack_require__(48);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_SingleContact_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__components_SingleContact_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_EditContact_vue__ = __webpack_require__(54);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_EditContact_vue__ = __webpack_require__(51);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_EditContact_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3__components_EditContact_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__store_js__ = __webpack_require__(57);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__store_js__ = __webpack_require__(54);
 __webpack_require__(14);
 window.Vue = __webpack_require__(37);
 window.Vuex = __webpack_require__(40);
@@ -51497,18 +51497,15 @@ if (false) {
 }
 
 /***/ }),
-/* 48 */,
-/* 49 */,
-/* 50 */,
-/* 51 */
+/* 48 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(2)
 /* script */
-var __vue_script__ = __webpack_require__(52)
+var __vue_script__ = __webpack_require__(49)
 /* template */
-var __vue_template__ = __webpack_require__(53)
+var __vue_template__ = __webpack_require__(50)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -51547,11 +51544,33 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 52 */
+/* 49 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -51568,6 +51587,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
         axios.get('contact/' + this.$route.params.id).then(function (response) {
             _this.$store.commit('singlecontact', response.data);
+            $('#exampleModal').modal('show');
         });
     },
 
@@ -51575,11 +51595,16 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         singlecontact: function singlecontact() {
             return this.$store.getters.singlecontact;
         }
+    },
+    methods: {
+        closemodal: function closemodal() {
+            this.$router.push('/');
+        }
     }
 });
 
 /***/ }),
-/* 53 */
+/* 50 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -51587,13 +51612,95 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", [
-    _c("p", [_vm._v("Name: " + _vm._s(_vm.singlecontact.name) + " ")]),
-    _vm._v(" "),
-    _c("p", [_vm._v("Address: " + _vm._s(_vm.singlecontact.address) + " ")]),
-    _vm._v(" "),
-    _c("p", [_vm._v("Email: " + _vm._s(_vm.singlecontact.email) + " ")]),
-    _vm._v(" "),
-    _c("p", [_vm._v("Phone: " + _vm._s(_vm.singlecontact.phone) + " ")])
+    _c(
+      "div",
+      {
+        staticClass: "modal fade",
+        attrs: {
+          id: "exampleModal",
+          tabindex: "-1",
+          role: "dialog",
+          "aria-labelledby": "exampleModalLabel",
+          "aria-hidden": "true"
+        }
+      },
+      [
+        _c(
+          "div",
+          { staticClass: "modal-dialog", attrs: { role: "document" } },
+          [
+            _c("div", { staticClass: "modal-content" }, [
+              _c("div", { staticClass: "modal-header" }, [
+                _c(
+                  "h5",
+                  {
+                    staticClass: "modal-title",
+                    attrs: { id: "exampleModalLabel" }
+                  },
+                  [_vm._v("Детальная информация о пользователе")]
+                ),
+                _vm._v(" "),
+                _c(
+                  "button",
+                  {
+                    staticClass: "close",
+                    attrs: {
+                      type: "button",
+                      "data-dismiss": "modal",
+                      "aria-label": "Close"
+                    },
+                    on: {
+                      click: function($event) {
+                        _vm.closemodal()
+                      }
+                    }
+                  },
+                  [
+                    _c("span", { attrs: { "aria-hidden": "true" } }, [
+                      _vm._v("×")
+                    ])
+                  ]
+                )
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "modal-body" }, [
+                _c("p", [
+                  _vm._v("Name: " + _vm._s(_vm.singlecontact.name) + " ")
+                ]),
+                _vm._v(" "),
+                _c("p", [
+                  _vm._v("Address: " + _vm._s(_vm.singlecontact.address) + " ")
+                ]),
+                _vm._v(" "),
+                _c("p", [
+                  _vm._v("Email: " + _vm._s(_vm.singlecontact.email) + " ")
+                ]),
+                _vm._v(" "),
+                _c("p", [
+                  _vm._v("Phone: " + _vm._s(_vm.singlecontact.phone) + " ")
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "modal-footer" }, [
+                _c(
+                  "button",
+                  {
+                    staticClass: "btn btn-secondary",
+                    attrs: { type: "button", "data-dismiss": "modal" },
+                    on: {
+                      click: function($event) {
+                        _vm.closemodal()
+                      }
+                    }
+                  },
+                  [_vm._v("Ok")]
+                )
+              ])
+            ])
+          ]
+        )
+      ]
+    )
   ])
 }
 var staticRenderFns = []
@@ -51607,15 +51714,15 @@ if (false) {
 }
 
 /***/ }),
-/* 54 */
+/* 51 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(2)
 /* script */
-var __vue_script__ = __webpack_require__(55)
+var __vue_script__ = __webpack_require__(52)
 /* template */
-var __vue_template__ = __webpack_require__(56)
+var __vue_template__ = __webpack_require__(53)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -51654,7 +51761,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 55 */
+/* 52 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -51717,7 +51824,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 56 */
+/* 53 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -51878,7 +51985,7 @@ if (false) {
 }
 
 /***/ }),
-/* 57 */
+/* 54 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -51913,7 +52020,7 @@ if (false) {
 });
 
 /***/ }),
-/* 58 */
+/* 55 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
